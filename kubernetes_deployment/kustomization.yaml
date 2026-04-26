@@ -1,0 +1,12 @@
+namespace: myapp
+
+resources:
+  - yaml_files/myservice1_deployment.yaml
+  - yaml_files/myservice1_service.yaml
+  - yaml_files/myservice2_deployment.yaml
+  - yaml_files/myservice2_service.yaml
+  - yaml_files/ingress.yaml
+  - yaml_files/mysql-secret.yaml
+  - yaml_files/mysql-storage.yaml
+  - yaml_files/mysql-deployment.yaml
+  - yaml_files/mysql-serviceNodePort.yaml

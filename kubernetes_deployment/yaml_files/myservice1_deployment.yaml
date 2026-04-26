@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myservice1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myservice1
+  template:
+    metadata:
+      labels:
+        app: myservice1
+    spec:
+      containers:
+        - image: coudertalex/myservice1:5
+          imagePullPolicy: IfNotPresent
+          name: myservice1
+          ports:
+          - containerPort: 3000
+      restartPolicy: Always
