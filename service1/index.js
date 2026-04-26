@@ -1,6 +1,8 @@
 const express = require("express");
-const app = express();
+const path = require("path");
 
+const app = express();
+app.use(express.static("public"));
 const PORT = process.env.PORT || 3000;
 
 // Page 1
@@ -29,8 +31,11 @@ app.get("/page2", (req, res) => {
   `);
 });
 
+app.use(express.static(path.join(__dirname, "public")));
+
 app.get("/", (req, res) => {
-  res.send("Service 1 is running. Try /page1 or /page2");
+  //res.send("Service 1 is running. Try /page1 or /page2");
+  res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
 app.listen(PORT, () => {
